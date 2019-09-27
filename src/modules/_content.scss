@@ -6,19 +6,55 @@
     height: 130px;
     width: 100%;
     h1{
-        color:$white;font-size:2.5em;font-weight:100;padding-top:50px;
+        color:$white;
+        font-size:2.5em;
+        font-weight:100;
+        padding-top:50px;
+
+        /*media mixin for headline h1*/
+        @include break(767px){
+            font-size:2em;
+            padding-top:50px;
+        } 
+        @include break(459px){
+            font-size:1.5em;
+            padding-top:30px;
+        } 
     }
 }
 
 #content {
-    width:940px;margin:20px auto;
+    width:940px;
+    margin:20px auto;
+    /*media mixin for id content*/
+    @include break(959px){
+        width:inherit;
+    } 
 
     h3{
-        color: $grey;font-size:2em;font-weight:400;
+        color: $grey;
+        font-size:2em;
+        font-weight:400;
+
+        /*media mixin for id content h3*/
+        @include break(459px){
+            font-size:1.6em;
+        } 
     }
 
     #products{
         width: (100% / 2);float:left;
+            
+        /*media mixin for id content products*/
+        @include break(959px){
+            width:46%;
+            margin:0 2%;
+        } 
+        @include break(767px){
+            width:96%;
+            margin:0 2%;
+            float:none;
+        } 
 
         img{
             float:left;margin-right:20px;
@@ -26,6 +62,11 @@
         article{
             #articleimage1{
                 @include backgroundImage($background-article-1-img, false, no-repeat, top-right, contain, 170px, auto);
+
+                /*media mixin for article image*/
+                @include break(459px){
+                    display:none;
+                } 
             }
             #articleimage2{
                 @include backgroundImage($background-article-2-img, false, no-repeat, top-right, contain, 170px, auto);
@@ -37,6 +78,18 @@
         }
     }
     #testimonials{
-        width:(100% / 2);float:right;
+        width:(100% / 2);
+        float:right;
+
+        /*media mixin for id content testimonials*/
+        @include break(959px){
+            width:46%;
+            margin:0 2%;
+        } 
+        @include break(767px){
+            width:96%;
+            margin:0 2%;
+            float:none;
+        } 
     }
 }

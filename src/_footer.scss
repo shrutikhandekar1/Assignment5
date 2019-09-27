@@ -5,6 +5,11 @@
             width: 100%;
             clear: both;
             padding-top: 30px;
+            
+            /*media mixin for article image*/
+            @include break(459px){
+                display:none;
+            } 
 }
 footer {    
             background:$color-background-footer;
@@ -13,6 +18,26 @@ footer {
             text-align:center;
             color: $white;
             padding-top:50px;
+
+            /*media mixin for footer*/
+            @include break(459px){
+                text-align:center;
+            } 
+
+            p {        
+                /*media mixin for footer p*/
+                @include break(459px){
+                    float:none;
+                    margin:0;
+                } 
+            }
+            img {        
+                /*media mixin for footer img*/
+                @include break(459px){
+                    float:none;
+                    margin:0;
+                } 
+            }
 }
 
 .social-media {

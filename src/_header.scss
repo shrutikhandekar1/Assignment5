@@ -5,9 +5,71 @@ header {
                             @include backgroundImage($background-header-img,false, no-repeat, center, contain, false, 100%);
                             padding-top: 70%;
                             margin-bottom: 50px;
+                            
+
+                            /*media mixin for header h1*/
+                            @include break(767px){
+                                margin-bottom:100px;
+                            } 
+                            @include break(459px){
+                                margin-bottom:80px;
+                            } 
                 }
 
-        h1      {color:$red;font-weight:100;font-size:4rem;line-height:0;}
-        h2      {color:$white;font-weight:900;font-size:2.5em;line-height:0;margin-bottom:70px;}
-        h3      {color:$grey;font-weight:400;font-size:2em;line-height:0;margin-bottom:50px;}       
+        h1 {
+                color:$red;
+                font-weight:100;
+                font-size:4rem;
+                line-height:0;
+                
+                /*media mixin for header h1*/
+                @include break(959px){
+                        font-size:3em;
+                }
+                @include break(767px){
+                        font-size:2em;
+                } 
+        }
+        h1:first-child{
+                /*media mixin for header h1:first-child*/
+                @include break(459px){
+                        font-size:1.4em;
+                        margin-bottom:20px;
+                } 
+                
+        }
+        h2 {
+                color:$white;
+                font-weight:900;
+                font-size:2.5em;
+                line-height:0;
+                margin-bottom:70px;
+
+                /*media mixin for header h2*/
+                @include break(959px){
+                        font-size:1.5em;
+                }
+                @include break(767px){
+                        font-size:1em;
+                } 
+                @include break(459px){
+                        font-size:1.4em;
+                } 
+        }
+        h3 {
+                color:$grey;
+                font-weight:400;
+                font-size:2em;
+                line-height:0;
+                margin-bottom:50px;
+
+                /*media mixin for header h3*/
+                @include break(767px){
+                        font-size:1.5em;
+                } 
+                @include break(459px){
+                        color:#FFF;
+                        font-size:1em;
+                } 
+        }       
 }

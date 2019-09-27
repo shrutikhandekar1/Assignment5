@@ -20,10 +20,23 @@
 	ul {
         list-style-type:none;
         margin-top:95px;
+
+        /*Media query mixin for ul*/
+        @include break(959px){
+            margin-top:0;
+        }
 		li {
             display:inline;
             font-size:0.8em;
             margin-right:10px;
+
+            /*Media query mixin for li*/
+            @include break(959px){
+                font-size:1em;margin:0 10px;
+            }
+            @include break(767px){
+                font-size:1em;margin:0 10px;
+            }
 
 			a{
                 color: $color;
@@ -34,3 +47,10 @@
 	}
 }
 
+@mixin break($arg)
+{
+    @media screen and (max-width: $arg)
+    {
+        @content;
+    }
+}

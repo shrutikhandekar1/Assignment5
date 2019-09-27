@@ -6,4 +6,18 @@ body {
         line-height:2em;
         margin:0;
     }
-main       {width:940px;margin:0 auto;}
+main {
+    width:940px;
+    margin:0 auto;
+
+    @include break(959px){
+        width:768px;
+    }
+    @include break(767px){
+        width:460px;
+    }
+    @include break(459px){
+        width:300px;
+    }   
+    
+}

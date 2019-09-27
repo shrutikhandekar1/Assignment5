@@ -1,0 +1,13 @@
+
+/* NAVIGATION */
+figure {
+                @include backgroundImage($background-logo-img, false, no-repeat, 0 50px, auto, 190px , 400px);
+                float:left;
+                display:block;
+                margin:0;
+}
+nav {
+        @include header-nav();
+}
+
+

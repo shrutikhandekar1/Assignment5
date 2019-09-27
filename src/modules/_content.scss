@@ -1,0 +1,42 @@
+/* CONTENT */
+#headline {
+    text-align:center;
+    margin:0 auto;
+    background-color: $color-background;
+    height: 130px;
+    width: 100%;
+    h1{
+        color:$white;font-size:2.5em;font-weight:100;padding-top:50px;
+    }
+}
+
+#content {
+    width:940px;margin:20px auto;
+
+    h3{
+        color: $grey;font-size:2em;font-weight:400;
+    }
+
+    #products{
+        width: (100% / 2);float:left;
+
+        img{
+            float:left;margin-right:20px;
+        }
+        article{
+            #articleimage1{
+                @include backgroundImage($background-article-1-img, false, no-repeat, top-right, contain, 170px, auto);
+            }
+            #articleimage2{
+                @include backgroundImage($background-article-2-img, false, no-repeat, top-right, contain, 170px, auto);
+            }
+            margin-bottom:40px;
+        }
+        h4{
+            line-height:1em;
+        }
+    }
+    #testimonials{
+        width:(100% / 2);float:right;
+    }
+}

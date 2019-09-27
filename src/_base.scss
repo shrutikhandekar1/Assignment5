@@ -1,0 +1,9 @@
+/* BASIC STYLES */
+body {
+        @include backgroundImage($background-img, $white, repeat-x);
+        font-family: $font-body;
+        font-size:1em;
+        line-height:2em;
+        margin:0;
+    }
+main       {width:940px;margin:0 auto;}

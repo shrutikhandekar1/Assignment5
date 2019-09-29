@@ -70,12 +70,26 @@ header {
     height: auto;
     width: 100%;
     padding-top: 70%;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    /*media mixin for header h1*/ }
+    @media screen and (max-width: 767px) {
+      header #header-image {
+        margin-bottom: 100px; } }
+    @media screen and (max-width: 459px) {
+      header #header-image {
+        margin-bottom: 80px; } }
   header h1 {
     color: #E65C43;
     font-weight: 100;
     font-size: 4rem;
-    line-height: 0; }
+    line-height: 0;
+    /*media mixin for header h1*/ }
+    @media screen and (max-width: 959px) {
+      header h1 {
+        font-size: 3em; } }
+    @media screen and (max-width: 767px) {
+      header h1 {
+        font-size: 2em; } }
   header h2 {
     color: #FFF;
     font-weight: 900;
@@ -189,18 +203,6 @@ header h3 {
     header h3 {
       font-size: 1.4em; } }
 
-/* CONTENT */
-#headline h1 {
-  /*media mixin for headline h1*/ }
-  @media screen and (max-width: 767px) {
-    #headline h1 {
-      font-size: 2em;
-      padding-top: 50px; } }
-  @media screen and (max-width: 459px) {
-    #headline h1 {
-      font-size: 1.5em;
-      padding-top: 30px; } }
-
 #content {
   /*media mixin for id content*/ }
   @media screen and (max-width: 959px) {
@@ -211,6 +213,11 @@ header h3 {
     @media screen and (max-width: 459px) {
       #content h3 {
         font-size: 1.6em; } }
+  #content article #articleimage1, #content article #articleimage2 {
+    /*media mixin for article image*/ }
+    @media screen and (max-width: 459px) {
+      #content article #articleimage1, #content article #articleimage2 {
+        display: none; } }
 
 /* FOOTER */
 .greybar {
@@ -248,16 +255,33 @@ footer {
     color: #FFF;
     font-size: 2.5em;
     font-weight: 100;
-    padding-top: 50px; }
+    padding-top: 50px;
+    /*media mixin for headline h1*/ }
+    @media screen and (max-width: 767px) {
+      #headline h1 {
+        font-size: 2em;
+        padding-top: 50px; } }
+    @media screen and (max-width: 459px) {
+      #headline h1 {
+        font-size: 1.5em;
+        padding-top: 30px; } }
 
 #content {
   height: auto;
   width: 940px;
-  margin: 20px auto; }
+  margin: 20px auto;
+  /*media mixin for id content*/ }
+  @media screen and (max-width: 959px) {
+    #content {
+      width: inherit; } }
   #content h3 {
     color: #666;
     font-size: 2em;
-    font-weight: 400; }
+    font-weight: 400;
+    /*media mixin for id content h3*/ }
+    @media screen and (max-width: 459px) {
+      #content h3 {
+        font-size: 1.6em; } }
   #content #products {
     width: 50%;
     float: left;
@@ -274,31 +298,35 @@ footer {
         width: 96%;
         margin: 0 2%;
         float: none; } }
-    #content #products img {
-      float: left;
-      margin-right: 20px; }
-    #content #products article {
-      margin-bottom: 40px; }
-      #content #products article #articleimage1 {
-        background: url("../images/vprospect.png");
-        background-repeat: no-repeat;
-        background-position: top-right;
-        background-size: contain;
-        height: 170px;
-        width: auto;
-        /*media mixin for article image*/ }
-        @media screen and (max-width: 459px) {
-          #content #products article #articleimage1 {
-            display: none; } }
-      #content #products article #articleimage2 {
-        background: url("../images/vconvert.png");
-        background-repeat: no-repeat;
-        background-position: top-right;
-        background-size: contain;
-        height: 170px;
-        width: auto; }
-    #content #products h4 {
-      line-height: 1em; }
+  #content img {
+    float: left;
+    margin-right: 20px; }
+  #content article {
+    margin-bottom: 40px; }
+    #content article #articleimage1 {
+      background: url("../images/vprospect.png");
+      background-repeat: no-repeat;
+      background-position: top-right;
+      background-size: contain;
+      height: 170px;
+      width: auto;
+      /*media mixin for article image*/ }
+      @media screen and (max-width: 459px) {
+        #content article #articleimage1 {
+          display: none; } }
+    #content article #articleimage2 {
+      background: url("../images/vconvert.png");
+      background-repeat: no-repeat;
+      background-position: top-right;
+      background-size: contain;
+      height: 170px;
+      width: auto;
+      /*media mixin for article image*/ }
+      @media screen and (max-width: 459px) {
+        #content article #articleimage2 {
+          display: none; } }
+  #content h4 {
+    line-height: 1em; }
   #content #testimonials {
     height: auto;
     width: 50%;
@@ -322,7 +350,11 @@ footer {
   height: 90px;
   width: 100%;
   clear: both;
-  padding-top: 30px; }
+  padding-top: 30px;
+  /*media mixin for article image*/ }
+  @media screen and (max-width: 459px) {
+    .greybar {
+      display: none; } }
 
 footer {
   background: #30353D;
@@ -330,7 +362,23 @@ footer {
   width: 100%;
   text-align: center;
   color: #FFF;
-  padding-top: 50px; }
+  padding-top: 50px;
+  /*media mixin for footer*/ }
+  @media screen and (max-width: 459px) {
+    footer {
+      text-align: center; } }
+  footer p {
+    /*media mixin for footer p*/ }
+    @media screen and (max-width: 459px) {
+      footer p {
+        float: none;
+        margin: 0; } }
+  footer img {
+    /*media mixin for footer img*/ }
+    @media screen and (max-width: 459px) {
+      footer img {
+        float: none;
+        margin: 0; } }
 
 .social-media {
   height: auto;

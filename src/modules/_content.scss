@@ -10,6 +10,16 @@
         font-size:2.5em;
         font-weight:100;
         padding-top:50px;
+
+        /*media mixin for headline h1*/
+        @include break(767px){
+            font-size:2em;
+            padding-top:50px;
+        } 
+        @include break(459px){
+            font-size:1.5em;
+            padding-top:30px;
+        } 
     }
 }
 
@@ -17,53 +27,68 @@
     @include dimensions(auto, 940px);
     @include marginPadding(20px auto, false);
 
+    /*media mixin for id content*/
+    @include break(959px){
+    width:inherit;
+    }
+
     h3{
         color: $grey;
         font-size:2em;
         font-weight:400;
+
+        /*media mixin for id content h3*/
+        @include break(459px){
+            font-size:1.6em;
+        }
 
     }
 
     #products{
         width: (100% / 2);
         @include setFloat(left);
+        
+            /*media mixin for id content products*/
+            @include break(959px){
+                @include dimensions(auto, 46%);
+                @include marginPadding(0 2%, false);
+                margin:0 2%;
+            } 
+            @include break(767px){
+                @include dimensions(auto, 96%);
+                @include marginPadding(0 2%, false);
+                @include setFloat(none);
+            } 
             
-        /*media mixin for id content products*/
-        @include break(959px){
-            @include dimensions(auto, 46%);
-            @include marginPadding(0 2%, false);
-            margin:0 2%;
-        } 
-        @include break(767px){
-            @include dimensions(auto, 96%);
-            @include marginPadding(0 2%, false);
-            @include setFloat(none);
-        } 
-
-        img{
-            @include setFloat(left);
-            margin-right:20px;
-        }
-        article{
-            #articleimage1{
-                @include backgroundImage($background-article-1-img, false, no-repeat, top-right, contain);
-                @include dimensions(170px, auto);
-
-                /*media mixin for article image*/
-                @include break(459px){
-                    display:none;
-                } 
-            }
-            #articleimage2{
-                @include backgroundImage($background-article-2-img, false, no-repeat, top-right, contain);
-                @include dimensions(170px, auto);
-            }
-            margin-bottom:40px;
-        }
-        h4{
-            line-height:1em;
-        }
+        
     }
+    img{
+        @include setFloat(left);
+        margin-right:20px;
+    }
+    article{
+        #articleimage1{
+            @include backgroundImage($background-article-1-img, false, no-repeat, top-right, contain);
+            @include dimensions(170px, auto);
+            /*media mixin for article image*/
+            @include break(459px){
+                display:none;
+            } 
+        }
+        #articleimage2{
+            @include backgroundImage($background-article-2-img, false, no-repeat, top-right, contain);
+            @include dimensions(170px, auto);
+            /*media mixin for article image*/
+            @include break(459px){
+                display:none;
+            } 
+        }
+        margin-bottom:40px;
+    }
+    h4{
+        line-height:1em;
+    }
+    
     #testimonials{
         @include dimensions(auto, 50%);
         @include setFloat(right);

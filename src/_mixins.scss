@@ -17,11 +17,8 @@
 }
 
 @mixin clearfix {
-    &:after {
-      content: "";
-      display: table;
       clear: both;
-    }
+    
   }
   
 @mixin backgroundImage($image: false, $backColor: false, $repeat: false, $position: false, $size: false, $height: false, $width: false)

@@ -59,12 +59,9 @@ nav {
 /* HEADER */
 header {
   width: inherit;
+  clear: both;
   text-align: center;
   padding-top: 40px; }
-  header:after {
-    content: "";
-    display: table;
-    clear: both; }
   header #header-image {
     background: url("../images/devices.png");
     background-repeat: no-repeat;
@@ -324,11 +321,8 @@ footer {
   background-color: #F5F6F6;
   height: 90px;
   width: 100%;
+  clear: both;
   padding-top: 30px; }
-  .greybar:after {
-    content: "";
-    display: table;
-    clear: both; }
 
 footer {
   background: #30353D;

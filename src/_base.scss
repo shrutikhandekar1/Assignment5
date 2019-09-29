@@ -1,23 +1,12 @@
 /* BASIC STYLES */
 body {
-        @include backgroundImage($background-img, $white, repeat-x);
-        font-family: $font-body;
-        font-size:1em;
-        line-height:2em;
-        margin:0;
-    }
+    @include backgroundImage($background-img, $white, repeat-x);
+    font-family: $font-body;
+    font-size:1em;
+    line-height:2em;
+    @include marginPadding(0, false);
+}
 main {
-    width:940px;
-    margin:0 auto;
-
-    @include break(959px){
-        width:768px;
-    }
-    @include break(767px){
-        width:460px;
-    }
-    @include break(459px){
-        width:300px;
-    }   
-    
+    @include dimensions(auto, 940px);
+    @include marginPadding(0 auto, false);
 }

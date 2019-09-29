@@ -1,63 +1,146 @@
+main {
 
-/* MEDIA QUERIES */
-@media screen and (max-width:959px) {
-    main 						{width:768px;}
-    figure						{width:inherit;height:140px;float:none;background-position:center;}
-    nav 						{width:inherit;height:50px;float:none;text-align:center;}
-    nav {
-            ul	{
-                    margin-top:0;
-                    li	{font-size:1em;margin:0 10px;}
-                
-            }
+    @include break(959px){
+        width:768px;
     }
-    header {
-                h1		{font-size:3em;}
-                h2 		{font-size:1.5em;}
+    @include break(767px){
+        width:460px;
     }
-    #content {
-                width:inherit;
-                #products, #testimonials {width:46%;margin:0 2%;}
-    }			
+    @include break(459px){
+        width:300px;
+    }   
+
 }
-    
-@media screen and (max-width:767px) {
-    main 		{width:460px;}
-    nav ul li	{font-size:0.8em;margin:0 5px;}
-    header {
-                h1{ font-size:2em;}
-                h2{font-size:1em;}
-                h3{font-size:1.5em;}
-                img{margin-bottom:100px;}
+
+
+/* NAVIGATION */
+figure {
+    /*media mixin for logo figure*/
+    @include break(959px){
+         width:inherit;height:140px;@include setFloat(none);background-position:center;
     }
-    #headline{
-                h1{font-size:2em;padding-top:50px;}
+    @include break(459px){
+         background-size:contain;height:100px;
+    }   
+}
+nav {
+    /*media mixin for nav*/
+    @include break(959px){
+            width:inherit;height:50px;@include setFloat(none);text-align:center;
+    }
+    @include break(459px){
+            font-size:0.8em;margin:0 5px;
     } 
-    #content{
-                #products, #testimonials {width:96%;margin:0 2%;float:none;} 
+}
+
+/* HEADER */
+header {
+    #header-image  {
+                        /*media mixin for header h1*/
+                        @include break(767px){
+                            margin-bottom:100px;
+                        } 
+                        @include break(459px){
+                            margin-bottom:80px;
+                        } 
+            }
+
+    h1 {
+        /*media mixin for header h1*/
+        @include break(959px){
+                font-size:3em;
+        }
+        @include break(767px){
+                font-size:2em;
+        } 
+    }
+    h1:first-child{
+            /*media mixin for header h1:first-child*/
+            @include break(459px){
+                    font-size:1.4em;
+                    margin-bottom:20px;
+            } 
+            
+    }
+    h2 {
+
+        /*media mixin for header h2*/
+        @include break(959px){
+                font-size:2.0em;
+        }
+        @include break(767px){
+                font-size:1.5em;
+        } 
+        @include break(459px){
+                font-size:1.4em;
+        } 
+    }
+    h3 {
+        /*media mixin for header h2*/
+        @include break(959px){
+                font-size:2.0em;
+        }
+        @include break(767px){
+                font-size:1.5em;
+        } 
+        @include break(459px){
+                font-size:1.4em;
+        } 
+    }       
+}
+/* CONTENT */
+#headline {
+    h1{
+        /*media mixin for headline h1*/
+        @include break(767px){
+            font-size:2em;
+            padding-top:50px;
+        } 
+        @include break(459px){
+            font-size:1.5em;
+            padding-top:30px;
+        } 
     }
 }
 
+#content{
+      /*media mixin for id content*/
+    @include break(959px){
+        width:inherit;
+    } 
 
-@media screen and (max-width:459px) {
-    main 		{width:300px;}
-    figure		{background-size:contain;height:100px;}
-    nav			{margin-bottom:40px !important;}
-    select      {width:95%;}
-    #headline {
-                h1	{font-size:1.5em;padding-top:30px;}
+    h3{
+        /*media mixin for id content h3*/
+        @include break(459px){
+            font-size:1.6em;
+        } 
     }
-    header {
-                img	                {margin-bottom:80px;}
-                h1:first-child      {font-size:1.4em; margin-bottom:20px;}
-                h2					{font-size:1.4em;}
-                h3					{color: $white; font-size:1em;}
-    }
+}
+/* FOOTER */
+.greybar {
+    /*media mixin for article image*/
+    @include break(459px){
+        display:none;
+    } 
+}
+footer {    
+    /*media mixin for footer*/
+    @include break(459px){
+        text-align:center;
+    } 
 
-    #content h3					{font-size:1.6em;}
-    .greybar, article img		{display:none;}
-    footer	{
-                p   	{text-align:center;}
-                img     {float:none;margin:0;}
+    p {        
+        /*media mixin for footer p*/
+        @include break(459px){
+            @include setFloat(none);
+            margin:0;
+        } 
+    }
+    img {        
+        /*media mixin for footer img*/
+        @include break(459px){
+            @include setFloat(none);
+            margin:0;
+        } 
     }
 }

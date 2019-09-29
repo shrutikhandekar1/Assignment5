@@ -1,3 +1,29 @@
+@mixin dimensions($height, $width){
+
+    height:$height; 
+    width:$width;
+
+}
+
+@mixin marginPadding($margin: false, $padding:false){
+
+    @if $margin {margin:$margin}; 
+    @if $padding {padding:$padding};
+
+}
+
+@mixin setFloat($float){
+    float: $float;   
+}
+
+@mixin clearfix {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  
 @mixin backgroundImage($image: false, $backColor: false, $repeat: false, $position: false, $size: false, $height: false, $width: false)
 {
     @if $image {background: $image};
@@ -35,7 +61,7 @@
                 font-size:1em;margin:0 10px;
             }
             @include break(767px){
-                font-size:1em;margin:0 10px;
+                font-size:0.8em;margin:0 5px;
             }
 
 			a{

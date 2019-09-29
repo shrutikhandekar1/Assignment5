@@ -1,30 +1,13 @@
 
 /* NAVIGATION */
 figure {
-                @include backgroundImage($background-logo-img, false, no-repeat, 0 50px, auto, 190px , 400px);
-                float:left;
-                display:block;
-                margin:0;
-
-                /*media mixin for logo figure*/
-                @include break(959px){
-                     width:inherit;height:140px;float:none;background-position:center;
-                }
-                @include break(459px){
-                     background-size:contain;height:100px;
-                }   
+        @include backgroundImage($background-logo-img, false, no-repeat, 0 50px, auto);
+        @include dimensions(190px, 400px);
+        @include setFloat(left);
+        display:block;
+        @include marginPadding(0, false);
 }
 nav {
         /*Mixin for navigation*/
         @include header-nav();
-
-        /*media mixin for nav*/
-        @include break(959px){
-                width:inherit;height:50px;float:none;text-align:center;
-        }
-        @include break(459px){
-                font-size:0.8em;margin:0 5px;
-        } 
 }
-
-

@@ -9,17 +9,9 @@ body {
   margin: 0; }
 
 main {
+  height: auto;
   width: 940px;
   margin: 0 auto; }
-  @media screen and (max-width: 959px) {
-    main {
-      width: 768px; } }
-  @media screen and (max-width: 767px) {
-    main {
-      width: 460px; } }
-  @media screen and (max-width: 459px) {
-    main {
-      width: 300px; } }
 
 /* NAVIGATION */
 figure {
@@ -31,26 +23,14 @@ figure {
   width: 400px;
   float: left;
   display: block;
-  margin: 0;
-  /*media mixin for logo figure*/ }
-  @media screen and (max-width: 959px) {
-    figure {
-      width: inherit;
-      height: 140px;
-      float: none;
-      background-position: center; } }
-  @media screen and (max-width: 459px) {
-    figure {
-      background-size: contain;
-      height: 100px; } }
+  margin: 0; }
 
 nav {
   /*Mixin for navigation*/
   float: left;
   text-align: right;
   width: 540px;
-  height: 190px;
-  /*media mixin for nav*/ }
+  height: 190px; }
   nav ul {
     list-style-type: none;
     margin-top: 95px;
@@ -69,12 +49,88 @@ nav {
           margin: 0 10px; } }
       @media screen and (max-width: 767px) {
         nav ul li {
-          font-size: 1em;
-          margin: 0 10px; } }
+          font-size: 0.8em;
+          margin: 0 5px; } }
       nav ul li a {
         color: #E65C43;
         text-decoration: none;
         letter-spacing: -0.01em; }
+
+/* HEADER */
+header {
+  width: inherit;
+  text-align: center;
+  padding-top: 40px; }
+  header:after {
+    content: "";
+    display: table;
+    clear: both; }
+  header #header-image {
+    background: url("../images/devices.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: auto;
+    width: 100%;
+    padding-top: 70%;
+    margin-bottom: 50px; }
+  header h1 {
+    color: #E65C43;
+    font-weight: 100;
+    font-size: 4rem;
+    line-height: 0; }
+  header h2 {
+    color: #FFF;
+    font-weight: 900;
+    font-size: 2.5em;
+    line-height: 0;
+    padding-top: 10px;
+    margin-bottom: 70px;
+    /*media mixin for header h2*/ }
+    @media screen and (max-width: 959px) {
+      header h2 {
+        font-size: 2.0em; } }
+    @media screen and (max-width: 767px) {
+      header h2 {
+        font-size: 1.5em; } }
+    @media screen and (max-width: 459px) {
+      header h2 {
+        font-size: 1.4em; } }
+  header h3 {
+    color: #666;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 0;
+    margin-bottom: 50px; }
+
+@media screen and (max-width: 959px) {
+  main {
+    width: 768px; } }
+
+@media screen and (max-width: 767px) {
+  main {
+    width: 460px; } }
+
+@media screen and (max-width: 459px) {
+  main {
+    width: 300px; } }
+
+/* NAVIGATION */
+figure {
+  /*media mixin for logo figure*/ }
+  @media screen and (max-width: 959px) {
+    figure {
+      width: inherit;
+      height: 140px;
+      float: none;
+      background-position: center; } }
+  @media screen and (max-width: 459px) {
+    figure {
+      background-size: contain;
+      height: 100px; } }
+
+nav {
+  /*media mixin for nav*/ }
   @media screen and (max-width: 959px) {
     nav {
       width: inherit;
@@ -87,158 +143,102 @@ nav {
       margin: 0 5px; } }
 
 /* HEADER */
-header {
-  width: inherit;
-  clear: both;
-  text-align: center;
-  padding-top: 40px; }
-  header #header-image {
-    background: url("../images/devices.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%;
-    padding-top: 70%;
-    margin-bottom: 50px;
-    /*media mixin for header h1*/ }
-    @media screen and (max-width: 767px) {
-      header #header-image {
-        margin-bottom: 100px; } }
-    @media screen and (max-width: 459px) {
-      header #header-image {
-        margin-bottom: 80px; } }
-  header h1 {
-    color: #E65C43;
-    font-weight: 100;
-    font-size: 4rem;
-    line-height: 0;
-    /*media mixin for header h1*/ }
-    @media screen and (max-width: 959px) {
-      header h1 {
-        font-size: 3em; } }
-    @media screen and (max-width: 767px) {
-      header h1 {
-        font-size: 2em; } }
-  header h1:first-child {
-    /*media mixin for header h1:first-child*/ }
-    @media screen and (max-width: 459px) {
-      header h1:first-child {
-        font-size: 1.4em;
-        margin-bottom: 20px; } }
-  header h2 {
-    color: #FFF;
-    font-weight: 900;
-    font-size: 2.5em;
-    line-height: 0;
-    margin-bottom: 70px;
-    /*media mixin for header h2*/ }
-    @media screen and (max-width: 959px) {
-      header h2 {
-        font-size: 1.5em; } }
-    @media screen and (max-width: 767px) {
-      header h2 {
-        font-size: 1em; } }
-    @media screen and (max-width: 459px) {
-      header h2 {
-        font-size: 1.4em; } }
-  header h3 {
-    color: #666;
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 0;
-    margin-bottom: 50px;
-    /*media mixin for header h3*/ }
-    @media screen and (max-width: 767px) {
-      header h3 {
-        font-size: 1.5em; } }
-    @media screen and (max-width: 459px) {
-      header h3 {
-        color: #FFF;
-        font-size: 1em; } }
+header #header-image {
+  /*media mixin for header h1*/ }
+  @media screen and (max-width: 767px) {
+    header #header-image {
+      margin-bottom: 100px; } }
+  @media screen and (max-width: 459px) {
+    header #header-image {
+      margin-bottom: 80px; } }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 959px) {
-  main {
-    width: 768px; }
-  figure {
-    width: inherit;
-    height: 140px;
-    float: none;
-    background-position: center; }
-  nav {
-    width: inherit;
-    height: 50px;
-    float: none;
-    text-align: center; }
-  nav ul {
-    margin-top: 0; }
-    nav ul li {
-      font-size: 1em;
-      margin: 0 10px; }
-  header h1 {
-    font-size: 3em; }
-  header h2 {
-    font-size: 1.5em; }
-  #content {
-    width: inherit; }
-    #content #products, #content #testimonials {
-      width: 46%;
-      margin: 0 2%; } }
+header h1 {
+  /*media mixin for header h1*/ }
+  @media screen and (max-width: 959px) {
+    header h1 {
+      font-size: 3em; } }
+  @media screen and (max-width: 767px) {
+    header h1 {
+      font-size: 2em; } }
 
-@media screen and (max-width: 767px) {
-  main {
-    width: 460px; }
-  nav ul li {
-    font-size: 0.8em;
-    margin: 0 5px; }
-  header h1 {
-    font-size: 2em; }
-  header h2 {
-    font-size: 1em; }
-  header h3 {
-    font-size: 1.5em; }
-  header img {
-    margin-bottom: 100px; }
-  #headline h1 {
-    font-size: 2em;
-    padding-top: 50px; }
-  #content #products, #content #testimonials {
-    width: 96%;
-    margin: 0 2%;
-    float: none; } }
+header h1:first-child {
+  /*media mixin for header h1:first-child*/ }
+  @media screen and (max-width: 459px) {
+    header h1:first-child {
+      font-size: 1.4em;
+      margin-bottom: 20px; } }
 
-@media screen and (max-width: 459px) {
-  main {
-    width: 300px; }
-  figure {
-    background-size: contain;
-    height: 100px; }
-  nav {
-    margin-bottom: 40px !important; }
-  select {
-    width: 95%; }
-  #headline h1 {
-    font-size: 1.5em;
-    padding-top: 30px; }
-  header img {
-    margin-bottom: 80px; }
-  header h1:first-child {
-    font-size: 1.4em;
-    margin-bottom: 20px; }
-  header h2 {
-    font-size: 1.4em; }
-  header h3 {
-    color: #FFF;
-    font-size: 1em; }
+header h2 {
+  /*media mixin for header h2*/ }
+  @media screen and (max-width: 959px) {
+    header h2 {
+      font-size: 2.0em; } }
+  @media screen and (max-width: 767px) {
+    header h2 {
+      font-size: 1.5em; } }
+  @media screen and (max-width: 459px) {
+    header h2 {
+      font-size: 1.4em; } }
+
+header h3 {
+  /*media mixin for header h2*/ }
+  @media screen and (max-width: 959px) {
+    header h3 {
+      font-size: 2.0em; } }
+  @media screen and (max-width: 767px) {
+    header h3 {
+      font-size: 1.5em; } }
+  @media screen and (max-width: 459px) {
+    header h3 {
+      font-size: 1.4em; } }
+
+/* CONTENT */
+#headline h1 {
+  /*media mixin for headline h1*/ }
+  @media screen and (max-width: 767px) {
+    #headline h1 {
+      font-size: 2em;
+      padding-top: 50px; } }
+  @media screen and (max-width: 459px) {
+    #headline h1 {
+      font-size: 1.5em;
+      padding-top: 30px; } }
+
+#content {
+  /*media mixin for id content*/ }
+  @media screen and (max-width: 959px) {
+    #content {
+      width: inherit; } }
   #content h3 {
-    font-size: 1.6em; }
-  .greybar, article img {
-    display: none; }
+    /*media mixin for id content h3*/ }
+    @media screen and (max-width: 459px) {
+      #content h3 {
+        font-size: 1.6em; } }
+
+/* FOOTER */
+.greybar {
+  /*media mixin for article image*/ }
+  @media screen and (max-width: 459px) {
+    .greybar {
+      display: none; } }
+
+footer {
+  /*media mixin for footer*/ }
+  @media screen and (max-width: 459px) {
+    footer {
+      text-align: center; } }
   footer p {
-    text-align: center; }
+    /*media mixin for footer p*/ }
+    @media screen and (max-width: 459px) {
+      footer p {
+        float: none;
+        margin: 0; } }
   footer img {
-    float: none;
-    margin: 0; } }
+    /*media mixin for footer img*/ }
+    @media screen and (max-width: 459px) {
+      footer img {
+        float: none;
+        margin: 0; } }
 
 /* CONTENT */
 #headline {
@@ -251,42 +251,29 @@ header {
     color: #FFF;
     font-size: 2.5em;
     font-weight: 100;
-    padding-top: 50px;
-    /*media mixin for headline h1*/ }
-    @media screen and (max-width: 767px) {
-      #headline h1 {
-        font-size: 2em;
-        padding-top: 50px; } }
-    @media screen and (max-width: 459px) {
-      #headline h1 {
-        font-size: 1.5em;
-        padding-top: 30px; } }
+    padding-top: 50px; }
 
 #content {
+  height: auto;
   width: 940px;
-  margin: 20px auto;
-  /*media mixin for id content*/ }
-  @media screen and (max-width: 959px) {
-    #content {
-      width: inherit; } }
+  margin: 20px auto; }
   #content h3 {
     color: #666;
     font-size: 2em;
-    font-weight: 400;
-    /*media mixin for id content h3*/ }
-    @media screen and (max-width: 459px) {
-      #content h3 {
-        font-size: 1.6em; } }
+    font-weight: 400; }
   #content #products {
     width: 50%;
     float: left;
     /*media mixin for id content products*/ }
     @media screen and (max-width: 959px) {
       #content #products {
+        height: auto;
         width: 46%;
+        margin: 0 2%;
         margin: 0 2%; } }
     @media screen and (max-width: 767px) {
       #content #products {
+        height: auto;
         width: 96%;
         margin: 0 2%;
         float: none; } }
@@ -316,15 +303,18 @@ header {
     #content #products h4 {
       line-height: 1em; }
   #content #testimonials {
+    height: auto;
     width: 50%;
     float: right;
     /*media mixin for id content testimonials*/ }
     @media screen and (max-width: 959px) {
       #content #testimonials {
+        height: auto;
         width: 46%;
         margin: 0 2%; } }
     @media screen and (max-width: 767px) {
       #content #testimonials {
+        height: auto;
         width: 96%;
         margin: 0 2%;
         float: none; } }
@@ -334,47 +324,31 @@ header {
   background-color: #F5F6F6;
   height: 90px;
   width: 100%;
-  clear: both;
-  padding-top: 30px;
-  /*media mixin for article image*/ }
-  @media screen and (max-width: 459px) {
-    .greybar {
-      display: none; } }
+  padding-top: 30px; }
+  .greybar:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 footer {
   background: #30353D;
-  width: 100%;
   height: 120px;
+  width: 100%;
   text-align: center;
   color: #FFF;
-  padding-top: 50px;
-  /*media mixin for footer*/ }
-  @media screen and (max-width: 459px) {
-    footer {
-      text-align: center; } }
-  footer p {
-    /*media mixin for footer p*/ }
-    @media screen and (max-width: 459px) {
-      footer p {
-        float: none;
-        margin: 0; } }
-  footer img {
-    /*media mixin for footer img*/ }
-    @media screen and (max-width: 459px) {
-      footer img {
-        float: none;
-        margin: 0; } }
+  padding-top: 50px; }
 
 .social-media {
-  margin: 0 auto;
-  width: 165px; }
+  height: auto;
+  width: 165px;
+  margin: 0 auto; }
   .social-media .one, .social-media .two, .social-media .three, .social-media .four {
     float: left;
     margin-right: 5px; }
   .social-media a {
     display: block;
-    width: 36px;
     height: 36px;
+    width: 36px;
     text-indent: -9999px; }
   .social-media .one {
     background: url("../images/social-media.png") 0 0; }
